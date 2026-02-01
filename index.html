@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Politique de Confidentialité</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f1623;
+      color: #c8d6e5;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3a5f, #2a5298);
+      color: #7eb8ff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #6b7d93;
+    }
+
+    .card {
+      background: #162032;
+      border: 1px solid #1e3048;
+      border-radius: 14px;
+      padding: 34px 36px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card h2 .icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1e3a5f, #2a5298);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #8a9bb5;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .card ul li {
+      font-size: 14px;
+      color: #8a9bb5;
+      padding: 7px 0;
+      border-bottom: 1px solid #1e3048;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .card ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #2a5298;
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #1e3048;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: #2a5298;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="badge">Confidentialité</div>
+      <h1>Politique de Confidentialité</h1>
+      <p>Dernière mise à jour : Février 2026</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">📋</span> Collecte des données</h2>
+      <p>Notre application collecte uniquement les données nécessaires au bon fonctionnement de votre compte et à la sauvegarde de votre progression :</p>
+      <ul>
+        <li>Prénom et nom utilisateur</li>
+        <li>Adresse email (via connexion Google ou Apple)</li>
+        <li>Données de progression (quiz, scores, niveau)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🔐</span> Utilisation des données</h2>
+      <p>Les données collectées sont utilisées uniquement pour les finalités suivantes :</p>
+      <ul>
+        <li>Créer et gérer votre compte utilisateur</li>
+        <li>Sauvegarder votre progression dans l'application</li>
+        <li>Personnaliser votre expérience de révision</li>
+        <li>Vous permettre de vous connecter de façon sécurisée</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🛡️</span> Partage des données</h2>
+      <p>Nous ne partageons pas vos données personnelles avec des tiers. Les seuls partenaires techniques impliqués sont :</p>
+      <ul>
+        <li>Google (via Google Sign-In) — pour l'authentification uniquement</li>
+        <li>Apple (via Sign in with Apple) — pour l'authentification uniquement</li>
+        <li>Firebase (Google) — pour le stockage sécurisé de votre compte</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🔒</span> Sécurité</h2>
+      <p>Nous prenons la sécurité de vos données très au sérieux. Vos données sont chiffrées en transit et au repos via les protocoles standard de Firebase. Nous ne stockons jamais vos mots de passe directement — l'authentification est entièrement gérée par Google et Apple.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🗑️</span> Suppression de données</h2>
+      <p>Vous pouvez demander la suppression de votre compte et de toutes vos données à tout moment en nous contactant. Une fois supprimé, vos données seront définitivement effacées dans un délai de 30 jours.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">📬</span> Contact</h2>
+      <p>Si vous avez des questions concernant cette politique de confidentialité ou le traitement de vos données, vous pouvez nous contacter à :</p>
+      <p style="margin-top: 10px; color: #7eb8ff; font-weight: 600;">votre-email@example.com</p>
+    </div>
+
+    <div class="footer">
+      <p>En utilisant cette application, vous acceptez les termes de cette politique de confidentialité.<br/>
+      Cette politique peut être mise à jour à tout moment. Les modifications seront publiées sur cette page.</p>
+    </div>
+
+  </div>
+</body>
+</html>
