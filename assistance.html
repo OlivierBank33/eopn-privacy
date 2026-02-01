@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assistance — EOPN Prep</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f1623;
+      color: #c8d6e5;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3a5f, #2a5298);
+      color: #7eb8ff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #6b7d93;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .lang-btn {
+      background: #162032;
+      border: 1px solid #1e3048;
+      color: #6b7d93;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      border-color: #2a5298;
+      color: #7eb8ff;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, #1e3a5f, #2a5298);
+      border-color: #2a5298;
+      color: #ffffff;
+    }
+
+    .content { display: none; }
+    .content.active { display: block; }
+
+    .card {
+      background: #162032;
+      border: 1px solid #1e3048;
+      border-radius: 14px;
+      padding: 34px 36px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card h2 .icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1e3a5f, #2a5298);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #8a9bb5;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .card ul li {
+      font-size: 14px;
+      color: #8a9bb5;
+      padding: 7px 0;
+      border-bottom: 1px solid #1e3048;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .card ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #2a5298;
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #1a2d4a, #1e3a5f);
+      border: 1px solid #2a5298;
+      border-radius: 14px;
+      padding: 34px 36px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .contact-box h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      font-size: 14px;
+      color: #8a9bb5;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2a5298, #3a6cb5);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 24px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      opacity: 0.85;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #1e3048;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="badge">Support</div>
+      <h1 id="title">Assistance</h1>
+      <p id="subtitle">Nous sommes ici pour vous aider</p>
+    </div>
+
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="switchLang('fr', this)">Français</button>
+      <button class="lang-btn" onclick="switchLang('en', this)">English</button>
+    </div>
+
+    <!-- FRANÇAIS -->
+    <div class="content active" id="content-fr">
+
+      <div class="card">
+        <h2><span class="icon">📱</span> Problème de connexion</h2>
+        <ul>
+          <li>Assurez-vous que votre appareil est bien connecté à Internet</li>
+          <li>Essayez de vous déconnecter puis de vous reconnecter avec votre compte Google ou Apple</li>
+          <li>Redémarrez l'application et réessayez</li>
+          <li>Mettez à jour l'application vers la dernière version disponible</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">💾</span> Progression non sauvegardée</h2>
+        <ul>
+          <li>Votre progression est sauvegardée automatiquement à chaque fin de quiz</li>
+          <li>Vérifiez que vous êtes bien connecté à votre compte</li>
+          <li>En cas d'absence d'Internet, la progression sera sauvegardée dès que vous retrouverez une connexion</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">🔄</span> Mise à jour de l'application</h2>
+        <ul>
+          <li>Ouvrez l'App Store sur votre iPhone</li>
+          <li>Allez dans votre profil (en bas à droite)</li>
+          <li>Descendez jusqu'à vos applications et tapez "Mettre à jour"</li>
+          <li>Les mises à jour sont importantes pour avoir accès aux derniers contenus</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">🗑️</span> Supprimer mon compte</h2>
+        <ul>
+          <li>Contactez-nous via le bouton ci-dessous</li>
+          <li>Indiquez l'email associé à votre compte</li>
+          <li>Votre compte et vos données seront supprimés dans un délai de 30 jours</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">❓</span> Autres questions</h2>
+        <p>Si votre problème ne correspond à aucune des situations ci-dessus, n'hésitez pas à nous contacter directement. Notre équipe sera ravie de vous aider dans les plus bref délais.</p>
+      </div>
+
+      <div class="contact-box">
+        <h2>Besoin d'aide ?</h2>
+        <p>Notre équipe est disponible pour répondre à toutes vos questions. Envoyez-nous un email et nous vous répondrons rapidement.</p>
+        <a href="mailto:votre-email@example.com" class="contact-btn">Contacter le support</a>
+      </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="content" id="content-en">
+
+      <div class="card">
+        <h2><span class="icon">📱</span> Connection Issue</h2>
+        <ul>
+          <li>Make sure your device is connected to the Internet</li>
+          <li>Try signing out and signing back in with your Google or Apple account</li>
+          <li>Restart the app and try again</li>
+          <li>Update the app to the latest version available</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">💾</span> Progress Not Saved</h2>
+        <ul>
+          <li>Your progress is automatically saved at the end of each quiz</li>
+          <li>Make sure you are signed in to your account</li>
+          <li>If you are offline, your progress will be saved once you regain an Internet connection</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">🔄</span> Update the App</h2>
+        <ul>
+          <li>Open the App Store on your iPhone</li>
+          <li>Go to your profile (bottom right)</li>
+          <li>Scroll down to your apps and tap "Update"</li>
+          <li>Updates are important to access the latest content</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">🗑️</span> Delete My Account</h2>
+        <ul>
+          <li>Contact us using the button below</li>
+          <li>Provide the email address associated with your account</li>
+          <li>Your account and data will be deleted within 30 days</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="icon">❓</span> Other Questions</h2>
+        <p>If your issue does not match any of the situations above, feel free to contact us directly. Our team will be happy to assist you as quickly as possible.</p>
+      </div>
+
+      <div class="contact-box">
+        <h2>Need Help?</h2>
+        <p>Our team is available to answer all your questions. Send us an email and we will get back to you as soon as possible.</p>
+        <a href="mailto:votre-email@example.com" class="contact-btn">Contact Support</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 EOPN Prep. Tous droits réservés.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function switchLang(lang, btn) {
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('content-' + lang).classList.add('active');
+      btn.classList.add('active');
+
+      if (lang === 'fr') {
+        document.getElementById('title').textContent = 'Assistance';
+        document.getElementById('subtitle').textContent = 'Nous sommes ici pour vous aider';
+      } else {
+        document.getElementById('title').textContent = 'Support';
+        document.getElementById('subtitle').textContent = 'We are here to help you';
+      }
+    }
+  </script>
+</body>
+</html>
